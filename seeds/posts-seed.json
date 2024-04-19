@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Coding for beginners",
+        "post_content": "This is a post about coding for beginners",
+        "user_id": 1
+    },
+    {
+        "id": 2,
+        "title": "Coding for intermediates",
+        "post_content": "This is a post about coding for intermediates",
+        "user_id": 2
+    },
+    {
+        "id": 3,
+        "title": "Coding for experts",
+        "post_content": "This is a post about coding for experts",
+        "user_id": 3
+    },
+    {
+        "id": 4,
+        "title": "Coding for all",
+        "post_content": "This is a post about coding for all",
+        "user_id": 2
+    },
+    {
+        "id": 5,
+        "title": "Coding for none",
+        "post_content": "This is a post about coding for none",
+        "user_id": 1
+    },
+    {
+        "id": 6,
+        "title": "Coding for some",
+        "post_content": "This is a post about coding for some",
+        "user_id": 3
+    }
+]

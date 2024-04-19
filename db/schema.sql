@@ -1,3 +1,3 @@
-CREATE blogger_db;
+CREATE DATABASE blogger_db;
 
 USE blogger_db;

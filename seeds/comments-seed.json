@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "comment_text": "Nice post",
+        "post_id": 1,
+        "user_id": 3
+    },
+    {
+        "id": 2,
+        "comment_text": "Great post",
+        "post_id": 1,
+        "user_id": 2
+    },
+    {
+        "id": 3,
+        "comment_text": "Awesome post",
+        "post_id": 2,
+        "user_id": 1
+    },
+    {
+        "id": 4,
+        "comment_text": "Nice post",
+        "post_id": 2,
+        "user_id": 3
+    },
+    {
+        "id": 5,
+        "comment_text": "Great post",
+        "post_id": 3,
+        "user_id": 2
+    },
+    {
+        "id": 6,
+        "comment_text": "Awesome post",
+        "post_id": 3,
+        "user_id": 1
+    }
+]
