@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Post } = require("../models");
+const { User, Post, Comment } = require("../models");
 const withAuth = require("../utils/auth.js");
 
 // Display main page with search functionality
@@ -28,7 +28,7 @@ router.get("/profile", withAuth, async (req, res) => {
       include: [
         {
           model: Post,
-          attributes: ["postTitle", "postContent"],
+          attributes: ["title", "post_content"],
         },
       ],
     });
@@ -61,21 +61,47 @@ router.get("/signup", (req, res) => {
 });
 
 // Render the about page
-router.get("/about", (req, res) => {
-  res.render("about");
-});
+// router.get("/about", (req, res) => {
+//   res.render("about");
+// });
 
 
 // Get all posts
 router.get("/post", withAuth, async (req, res) => {
   const postdata = await Post.findAll({
-    attributes: ["id", "postTitle", "postContent", "user_id"],
-    include: [{ model: User, attributes: ["username"] }],
+    attributes: ["id", "title", "post_content", "user_id"],
+
+    //MAY NEED TO ADD THROUGH COMMENT
+
+    include: [
+        { 
+            model: User, 
+            attributes: ["username"] 
+        },
+        {
+            model: Comment,
+            include: [
+            {
+                model: User,
+                attributes: ["username"]
+            }
+        ]
+        }
+    ],
     where: {
       user_id: req.session.user_id,
     },
   });
   const posts = postdata.map((post) => post.get({ plain: true }));
+  // how will handlebars know to reference the comment object?
+  // answer: it will be passed in as a property of the post object
+    //In the post.handlebars file, we can access the comments array by using the post.comments syntax.
+    // on homepage handlebars, how do we access the comments?
+    // answer: we can't, because we're not passing the comments array to the homepage handlebars file
+    // we need to pass the comments array to the homepage handlebars file
+    // we can do this by updating the object we're passing to the render method in the / route
+    //
+
   res.render("post", {
     posts,
     logged_in: req.session.logged_in,
@@ -86,8 +112,24 @@ router.get("/post", withAuth, async (req, res) => {
 router.get("/posts/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      attributes: ["id", "postTitle", "postContent", "user_id"],
-      include: [{ model: User, attributes: ["username"] }],
+      attributes: ["id", "title", "post_content", "user_id"],
+      include: [
+        { 
+            model: User,
+            // through: Comment,
+            attributes: ["username"] 
+        },
+        {
+            model: Comment,
+            include: [
+            {
+                model: User,
+                attributes: ["username"]
+            }
+        ]}
+        
+    
+    ],
     });
     const post = postData.get({ plain: true });
     res.render("profile", {
@@ -98,5 +140,6 @@ router.get("/posts/:id", async (req, res) => {
     res.status(404).json({ error: "Post not found" });
   }
 });
+
 
 module.exports = router;

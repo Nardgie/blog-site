@@ -1,4 +1,4 @@
-{{!-- <html lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 <link rel="stylesheet" href="/css/style.css" />
-<title>ShelfLife</title>
+<title>La Tech Blog</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             {{#if logged_in}}
-            <a class="navbar-brand" href="/"><img src="/img/bookimg.gif" id="titleimg">shelfLife</a>
+            <a class="navbar-brand" href="/"><img src="/img/bookimg.gif" id="titleimg">La Tech Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
                     </div>
 
                     {{else}}
-                    <a class="navbar-brand" href="/"><img src="/img/bookimg.gif" id="titleimg">shelfLife</a>
+                    <a class="navbar-brand" href="/"><img src="/img/bookimg.gif" id="titleimg">La Tech Blog</a>
 
                     <a class="nav-item nav-link" href="/login">Login</a>
                     <a class="nav-item nav-link" href="/signup">Sign Up</a>
@@ -63,10 +63,10 @@
         crossorigin="anonymous"></script>
 
     {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    <script src="/js/delAccount.js"></script>
+    {{!-- <script src="/js/logout.js"></script>
+    <script src="/js/deleteUser.js"></script> --}}
 
     {{/if}}
 </body>
 
-</html> --}}
+</html>
