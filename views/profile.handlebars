@@ -1,0 +1,67 @@
+<div class="profile-page">
+
+    <div class="profile-details">
+        <h1>welcome {{user.username}}</h1>
+        {{!-- <p><strong>Email:</strong> {{user.email}}</p> --}}
+    </div>
+</div>
+
+<div id="create-post" class="create-post">
+    <h2 class="create-post-title">Create a New Post</h2>
+    <a href="/post" class="create-post-link">
+        <button class="cta-button" id="postBtn">Click here to create a new post
+
+        </button>
+    </a>
+</div>
+
+
+
+{{#each posts}}
+<div id="post-1" class="post">
+    <h3>My posts:</h3>
+    {{!-- {{#each posts}}
+    <span class="name">{{this.user.username}}</span>
+
+    <label class="post-title"> Book Title: {{this.title}}</label>
+    <p class="post-content">{{this.post_content}}</p>
+    <button class="cta-button btn-danger" id="delete-btn" data-id="{{this.id}}">DELETE</button>
+    {{/each}} --}}
+    
+    
+    
+        <span class="name">{{this.user.username}}</span>
+    
+        <label class="post-title"><b>{{this.title}}</b></label>
+        <p class="post-content">{{this.post_content}}</p>
+    
+        <div id="comment-section-1" class="comment-section">
+            <h3 class="comment-section-title">Comments</h3>
+            <ul class="comment-list">
+                <!-- Loop through comments and add each one to the list -->
+                {{#each this.comment}}
+                <li class="comment">
+                    <p class="comment-content">{{this.comment.comment_text}}</p>
+    
+                    <span class="comment-author">{{this.comment.user.username}}</span>
+                </li>
+                {{/each}}
+    
+            </ul>
+    
+            <form id="comment-form-1" class="comment-form">
+                <h3 class="comment-form-title">Add a Comment</h3>
+    
+                <textarea id="comment-content-1" class="comment-content-input" placeholder="Your Comment"></textarea>
+                <button type="submit" class="comment-form-button">Submit</button>
+                <button class="cta-button btn-danger" id="delete-btn" data-id="{{this.id}}">DELETE</button>
+    
+            </form>
+        </div>
+    </div>
+    {{/each}}
+
+
+
+<script src="./js/post.js"></script>
+<script src="/js/deleteUser.js"></script>
