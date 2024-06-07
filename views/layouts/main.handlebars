@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             {{#if logged_in}}
-            <a class="navbar-brand" href="/"><img src="/img/bookimg.gif" id="titleimg">La Tech Blog</a>
+            <a class="navbar-brand" href="/">LA Tech Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,20 +27,19 @@
                     <a class="nav-item nav-link active" href="/">Home</a>
 
                     <a class="nav-item nav-link" href="/profile">Profile</a>
-                    <button class="logout-btn">
+                    <button class="logout-btn float-right">
                         Log Out
                     </button>
-                    <div class="delete">
-                        <button class="btn btn-danger btn-lg" id="deleteAcc" title="Delete account?"
+                    <div class="delete float-right">
+                        <button class="btn btn-danger btn-lg float-right" id="deleteAcc" title="Delete account?"
                             data-id="{{id}}">Delete account?</button>
                     </div>
 
                     {{else}}
-                    <a class="navbar-brand" href="/"><img src="/img/bookimg.gif" id="titleimg">La Tech Blog</a>
+                    <a class="navbar-brand" href="/">La Tech Blog</a>
 
                     <a class="nav-item nav-link" href="/login">Login</a>
                     <a class="nav-item nav-link" href="/signup">Sign Up</a>
-                    <a class="nav-item nav-link " href="/about">About</a>
                     {{/if}}
                 </div>
             </div>
