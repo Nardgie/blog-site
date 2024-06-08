@@ -13,14 +13,9 @@ LA Tech Blog is a CMS-style platform designed for developers and tech enthusiast
 
 ## Installation
 
-To get started with the LA Tech Blog, follow these steps:
+No installation required. Simply visit the deployed site at:
 
-1. Clone the repository to your local machine.
-2. Install the required npm packages by running:
-3. Configure the environment variables in a `.env` file including your MySQL username, password, and database name.
-4. Initialize the database using the provided schema and optionally seed it with initial data.
-5. Start the server with:
-6. Navigate to `http://localhost:3000` on your web browser to view the application.
+[Blog-Site-Link](https://guarded-spire-74045-dcfb08b965ee.herokuapp.com/) 
 
 ## Usage
 
