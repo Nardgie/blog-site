@@ -5,7 +5,7 @@ const commentHandler = {
         const comment_text = document
           .querySelector("#comment-content-1")
           .value.trim();
-        const post_id = document.querySelector("#postID").value.trim();
+        const post_id = event.target.getAttribute("data-id");
         
         if (comment_text && post_id) {
             const response = await fetch("/api/comments", {
@@ -24,3 +24,6 @@ const commentHandler = {
         }
     }
 }
+
+// Event listener for the comment form submission
+document.querySelector(".comment-form-1").addEventListener("submit", commentHandler.newCommentHandler);

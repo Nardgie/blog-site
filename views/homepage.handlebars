@@ -1,7 +1,7 @@
 <div class="row">
 
 {{#each posts}}
-    <div id="post-1" class="post card border border-dark col-4">
+    <div id="post-1" class="post card border border-dark col-4" data-id="{{this.id}}">
         <div class="card-body">
             <span class="name card-title">{{this.user.username}}</span>
 
@@ -26,7 +26,7 @@
                     <h3 class="comment-form-title">Add a Comment</h3>
 
                     <textarea id="comment-content-1" class="comment-content-input" placeholder="Your Comment"></textarea>
-                    <button type="submit" class="comment-form-button">Submit</button>
+                    <button type="submit" class="comment-form-button" action="#">Submit</button>
                     <button class="cta-button btn-danger" id="delete-btn" data-id="{{this.id}}">DELETE</button>
 
                 </form>
@@ -44,3 +44,4 @@
 
 
 <script src="./js/profile.js"></script>
+<script src="./js/post.js"></script>

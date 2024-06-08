@@ -94,10 +94,10 @@ router.get("/post", withAuth, async (req, res) => {
   });
   const posts = postdata.map((post) => post.get({ plain: true }));
   // how will handlebars know to reference the comment object?
-  // answer: it will be passed in as a property of the post object
+  // it will be passed in as a property of the post object
     //In the post.handlebars file, we can access the comments array by using the post.comments syntax.
     // on homepage handlebars, how do we access the comments?
-    // answer: we can't, because we're not passing the comments array to the homepage handlebars file
+    // we can't, because we're not passing the comments array to the homepage handlebars file
     // we need to pass the comments array to the homepage handlebars file
     // we can do this by updating the object we're passing to the render method in the / route
     //
