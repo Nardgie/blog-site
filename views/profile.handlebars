@@ -20,12 +20,40 @@
     <h3>My posts:</h3>
     {{#each posts}}
         {{#each posts}}
-    <span class="name">{{this.user.username}}</span>
-
-    <label class="post-title"> Book Title: {{this.title}}</label>
-    <p class="post-content">{{this.post_content}}</p>
-    <button class="cta-button btn-danger" id="delete-btn" data-id="{{this.id}}">DELETE</button>
-    {{/each}} 
+        <div id="post-1" class="post card border border-dark col-4" data-id="{{this.id}}">
+            <div class="card-body">
+                <span class="name card-title">{{this.user.username}}</span>
+        
+                <label class="post-title card-title mb-2 text-body-secondary"><b>{{this.title}}</b></label>
+                <p class="post-content card-text">{{this.post_content}}</p>
+        
+                <div id="comment-section-1" class="comment-section">
+                    <h3 class="comment-section-title">Comments</h3>
+                    <ul class="comment-list">
+                        <!-- Loop through comments and add each one to the list -->
+                        {{#each this.comment}}
+                        <li class="comment">
+                            <p class="comment-content">{{this.comment.comment_text}}</p>
+        
+                            <span class="comment-author">{{this.comment.user.username}}</span>
+                        </li>
+                        {{/each}}
+        
+                    </ul>
+        
+                    <form id="comment-form-1" class="comment-form">
+                        <h3 class="comment-form-title">Add a Comment</h3>
+        
+                        <textarea id="comment-content-1" class="comment-content-input" placeholder="Your Comment"></textarea>
+                        <button type="submit" class="comment-form-button" action="#">Submit</button>
+                        <button class="cta-button btn-danger" id="delete-btn" data-id="{{this.id}}">DELETE</button>
+        
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        {{/each}}
     
     
     
